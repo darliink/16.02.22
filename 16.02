@@ -1,0 +1,48 @@
+Даны четыре действительных числа: x1, y1, x2, y2. Напишите функцию distance(x1, y1, x2, y2), вычисляющая расстояние между точкой (x1,y1) и (x2,y2). Считайте четыре действительных числа и выведите результат работы этой функции.
+
+from math import sqrt
+ 
+def distance(x1, y1, x2, y2):
+    return sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2) 
+x1 = float(input())
+x2 = float(input())
+y1 = float(input())
+y2 = float(input())
+print(distance(x1, x2, y1, y2))
+
+Напишите функцию min4(a, b, c, d), вычисляющую минимум четырех чисел, которая не содержит инструкции if, а использует стандартную функцию min. Считайте четыре целых числа и выведите их минимум.
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input()) 
+def min4(a, b, c, d):
+    return min(min(min(a, b), c), d)
+print(min4(a, b, c, d))
+
+Даны пять действительных чисел: x, y, xc, yc, r. Проверьте, принадлежит ли точка (x,y) кругу с центром (xc,yc) и радиусом r. Если точка принадлежит кругу, выведите слово YES, иначе выведите слово NO.
+Решение должно содержать функцию IsPointInCircle(x, y, xc, yc, r), возвращающую True, если точка принадлежит кругу и False, если не принадлежит. Основная программа должна считать координаты точки, вызвать функцию IsPointInCircle и в зависимости от возвращенного значения вывести на экран необходимое сообщение.
+Функция IsPointInCircle не должна содержать инструкцию if.
+def func(x,y,xc,yc,r):
+    return (x - xc) * (x - xc) + (y - yc) * (y - yc) <= r * r
+if __name__ == '__main__':
+    x=float(input())
+    y=float(input())
+    xc=float(input())
+    yc=float(input())
+    r=float(input())
+    func(x,y,xc,yc,r)
+    if func(x, y, xc, yc, r):
+        print("YES")
+    else:
+        print("NO")
+        
+Напишите функцию phib(n), которая по данному целому неотрицательному n возвращает n-e число Фибоначчи. В этой задаче нельзя использовать циклы - используйте рекурсию.
+phib(1) = phib(2) = 1
+.phib(n) = phib(n - 1) + phib(n - 2)
+
+def fib(n):
+    if n == 1 or n == 2:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
+print(fib(int(input())))
